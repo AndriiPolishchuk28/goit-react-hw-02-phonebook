@@ -17,7 +17,9 @@ export class App extends Component {
       number,
     };
 
-    const existContact = this.state.contacts.some(elem => elem.name === name);
+    const existContact = this.state.contacts.some(
+      elem => elem.name.toLowerCase() === name.toLowerCase()
+    );
 
     if (!existContact) {
       this.setState(({ contacts }) => ({
